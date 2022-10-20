@@ -11,6 +11,12 @@ import {MatTableModule} from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogPatientComponent } from './dialog-patient/dialog-patient.component';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { PatientDataSource } from './list-patients/patientDataSource';
 
 @NgModule({
   declarations: [
@@ -24,11 +30,21 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
     HttpClientModule,
     MatTableModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatRadioModule,
+    MatCheckboxModule
   ],
   providers: [
     {
       provide: MatDialogRef,
+      useValue: {}
+    },
+    {
+      provide: PatientDataSource,
       useValue: {}
     }
  ],

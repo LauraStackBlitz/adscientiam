@@ -18,4 +18,8 @@ export class ApiPatientDataService {
   public getPatientById(id: string): Observable<Patient>{
     return this.http.get<Patient>(this.REST_API_PATIENT + '/patients/'+id);
   }
+  
+  public putPatientById(id: number, patient: Patient): Observable<Patient>{
+    return this.http.put<Patient>(this.REST_API_PATIENT + '/patients/'+id, patient);
+  }
 }

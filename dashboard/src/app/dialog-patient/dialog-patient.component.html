@@ -1,2 +1,47 @@
-<p>{{data.lastName}}</p>
-<p>{{data.firstName}}</p>
+<button mat-button class="btn-fermer" (click)="closeDialog(data)">Fermer le détail</button>
+<div class="grid-container">
+    <img class="grid-item" src="../../assets/images/img_patient_f.svg">
+    <div class="title grid-item">Dossier patient</div>
+    <div class="identitee_patient grid-item">{{data.firstName}} {{data.lastName}}</div>
+</div>
+<div class="info_generale">Informations générales</div>
+<div class="info_perso">Informations personnelles</div>
+<form [formGroup]="patientForm" (ngSubmit)="updatePatient()">
+    <div class="wrapper">
+        <div class="grid-input">
+            <mat-form-field [formControl]="firstName" ngDefaultControl class="example-full-width" appearance="outline">
+                <mat-label>Last name</mat-label>
+                <input matInput placeholder="Edit last name" value="{{data.firstName}}">
+            </mat-form-field>
+            <mat-form-field [formControl]="lastName" ngDefaultControl  class="example-full-width" appearance="outline">
+                <mat-label>First name</mat-label>
+                <input matInput placeholder="Edit first name" value="{{data.lastName}}">
+            </mat-form-field>
+            <mat-form-field [formControl]="SEPType" ngDefaultControl  class="example-full-width" appearance="outline">
+                <mat-label>Type de SEP</mat-label>
+                <input matInput placeholder="Edit type de SEP" value="{{data.medicalInfo.SEPType}}">
+            </mat-form-field>
+            <mat-form-field [formControl]="scoreEDSS" ngDefaultControl  class="example-full-width" appearance="outline">
+                <mat-label>Score EDSS</mat-label>
+                <input matInput placeholder="Edit score EDSS" value="{{data.medicalInfo.scoreEDSS}}">
+            </mat-form-field>
+        </div>
+        <mat-radio-group [formControl]="gender" ngDefaultControl  aria-label="Genre">
+            <mat-radio-button value="m">Homme</mat-radio-button>
+            <mat-radio-button value="f">Femme</mat-radio-button>
+        </mat-radio-group>
+        <mat-checkbox [formControl]="firstDegree" [(ngModel)]="data.medicalInfo.factors.firstDegree">
+            Oui, au 1er degré (parents, frères et soeurs)
+        </mat-checkbox>
+        <mat-checkbox [formControl]="secondDegree" [(ngModel)]="data.medicalInfo.factors.secondDegree">
+            Oui, au 2eme degré (grands-parents, cousins)
+        </mat-checkbox>
+        <mat-checkbox [formControl]="noDegree" [(ngModel)]="data.medicalInfo.factors.noDegree">
+            Non
+        </mat-checkbox>
+        <mat-checkbox [formControl]="notSure" [(ngModel)]="data.medicalInfo.factors.notSure">
+            Ne sait pas
+        </mat-checkbox>
+        <button mat-raised-button type="submit">Enregistrer</button>
+    </div>
+</form>

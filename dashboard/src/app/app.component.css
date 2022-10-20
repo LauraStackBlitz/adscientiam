@@ -1,11 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+
 .title{
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 43px;
     line-height: 32px;
-    /* identical to box height, or 74% */
-    
-    
+    /* identical to box height, or 74% */  
     color: #2E384D;
+    margin-left: 60px;
 }
+
+img {
+    width: 15%;
+    margin-left: 15px;
+}
+

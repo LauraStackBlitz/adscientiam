@@ -1,3 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+
 table {
     width: 100%;
+    margin: 60px;
   }
+  
+.mat-header-cell{
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.8571428656578064px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.mat-cell{
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+button{
+  height: 39px;
+  width: 193px;
+  left: 0px;
+  top: 0px;
+  border-radius: 19.5px;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  background-color: white;
+  border: 1px solid #3762EA;
+  color: #3762EA;
+  margin-right:50px;
+  cursor: pointer;
+
+}
+
+.action_column{
+  position: relative;
+  top: 12px;
+  left: 60px;
+}
+
+img {
+  cursor: pointer;
+}

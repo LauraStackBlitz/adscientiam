@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { filter, map, Observable } from 'rxjs';
 import { DataSource } from '@angular/cdk/collections';
 import { ApiPatientDataService } from '../api-patient-data.service';
 import { Patient } from 'src/patient.types';
@@ -8,7 +8,11 @@ export class PatientDataSource extends DataSource<any> {
       super();
     }
     connect(): Observable<Patient[]> {
-      return this.patientService.getPatientList();
+
+      return this.patientService.getPatientList()
+        .pipe(
+          map((patient: Patient[]) => patient.filter(p => p.pairing == true ))
+        );
     }
     disconnect() { }
   }
