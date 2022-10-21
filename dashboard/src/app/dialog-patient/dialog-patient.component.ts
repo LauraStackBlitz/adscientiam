@@ -37,6 +37,7 @@ export class DialogPatientComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Recupere les infos du formulaire à updater
   async updatePatient() {  
         let patientToUpdate: any =
         {
@@ -55,12 +56,14 @@ export class DialogPatientComponent implements OnInit {
           },
           "id": this.data.id
         }
+          //appel api pour update le patient modifié dans la popin
           this.apipatients.putPatientById(patientToUpdate.id, patientToUpdate)
               .subscribe((patient: Patient) => 
+              //ferme la popin quand l'update est passé
                 this.closeDialog(patient)
           );
   }
-
+  //ferme la popin si l'utilisateur click sur le bouton fermer ou apres un update
   closeDialog(patient: Patient): void {
     this.dialogRef.close(patient);
   }

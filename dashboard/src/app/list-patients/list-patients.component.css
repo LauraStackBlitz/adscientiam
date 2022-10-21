@@ -50,3 +50,14 @@ button{
 img {
   cursor: pointer;
 }
+
+.search_bar {
+  width: 100%;
+  top: 45px;
+  margin-left: 60px;
+  background: #FFFFFF;
+}
+
+mat-icon{
+  cursor: pointer;
+}

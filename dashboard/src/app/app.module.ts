@@ -16,7 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { PatientDataSource } from './list-patients/patientDataSource';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -36,15 +36,12 @@ import { PatientDataSource } from './list-patients/patientDataSource';
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatIconModule
   ],
   providers: [
     {
       provide: MatDialogRef,
-      useValue: {}
-    },
-    {
-      provide: PatientDataSource,
       useValue: {}
     }
  ],
